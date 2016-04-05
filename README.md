@@ -33,22 +33,56 @@ This is a simple silex skeleton that i use for my personal projects, to deploy i
 4. General troubles of deployment.
 
 ### Cloning repository
-	```
-		git clone https://github.com/captaincode0/silex-skeleton.git
-		cd silex-skeleton
-	```
+
+Cloning into this repository
+```
+linuxuser@machine:~$git clone https://github.com/captaincode0/silex-skeleton.git
+lunuxuser@machien:~$cd silex-skeleton
+```
 
 ### Environment variables
+The environment variables are in controlles/app.php file, these variables are contained into application pimple container and compose the application url, but you can extend your application.
+```php
+class MyApplicationClass extends Application{
+	use Application\TwigTrait;
+	use Application\UrlGeneratorTrait;
+	use Application\MonologTrait;
+
+	public function __construct(array $values = array()){
+		parent::__construct($values);
+
+		//deploy application
+		$this["debug"]=true;
+		$this["production"]=false;
+		$this["https"]=false;
+		$this["asset.url"]=false;
+		$this["prefix-production.host"]="://silexskeleton.herokuapp.com/";
+		$this["prefix.host"]="://www.myhost.com/myapp/";
+		$this["host"] = ($this["production"])?$this["prefix-production.host"]:$this["prefix.host"];
+		$this["host"] = ($this["https"])?"https".$this["host"]:"http".$this["host"];
+	...
+	...
+```
+
+Variable | Explanation | Possible values
+---|---|---
+debug | application debug variable | boolean
+production|this variable deploys asset into a production environment|boolean
+https|set https into environment variables|boolean
+asset.url|concatenate the url with the assets|boolean
+prefix-production.host|prefix of production host|string [format: ~://host~]
+prefix.host|prefix for main host| string [format: ~://host]
+
 
 ### Virtual host
 
 ### General troubles of deployment
 #### ModRewrite
-	Enable ModRewrite on GNU/Linux:
 
-	```
-		a2enmode rewrite
-	```
+Enable ModRewrite on GNU/Linux:
+```
+linuxuser@machine:~$a2enmode rewrite
+```
 
 ## Author
 - Diego De Santiago
