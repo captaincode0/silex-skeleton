@@ -34,8 +34,8 @@ This is a simple silex skeleton that i use for my personal projects, to deploy i
 
 ### Cloning repository
 	```
-	git clone https://github.com/captaincode0/silex-skeleton.git
-	cd silex-skeleton
+		git clone https://github.com/captaincode0/silex-skeleton.git
+		cd silex-skeleton
 	```
 
 ### Environment variables
@@ -47,7 +47,7 @@ This is a simple silex skeleton that i use for my personal projects, to deploy i
 	Enable ModRewrite on GNU/Linux:
 
 	```
-	a2enmode rewrite
+		a2enmode rewrite
 	```
 
 ## Author
