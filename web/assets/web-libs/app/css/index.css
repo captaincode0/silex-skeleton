@@ -1,0 +1,54 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: white;
+	font-family: 'Orbitron', sans-serif;
+}
+
+
+.top-menu {
+	overflow: hidden;
+	padding: 20px;
+	list-style: none;
+}
+
+.top-menu a > li{
+	font-size: 18px;
+	text-decoration: none;
+	color: #e64602;
+	margin-left: 20px;
+	float: left;
+	border-bottom: 5px solid white;
+}
+
+.top-menu a > li:hover {
+	border-bottom: 5px solid #1397d0;
+}
+
+.skeleton-desc {
+	width: 300px;
+	padding: 10px;
+	margin: 30px auto 0 auto;
+}
+
+.skeleton-desc h1 {
+	color: #3d3d3d;
+	text-align: center;
+}
+
+.skeleton-desc .skull {
+	width: 200px;
+	height: 200px;
+}
+
+.skeleton-desc .git {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+}
+
+.skeleton-desc .git, .skeleton-desc .skull {
+	position:  relative;
+	display: block;
+	margin: 15px auto 0 auto;
+}

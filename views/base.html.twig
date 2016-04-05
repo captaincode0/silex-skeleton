@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% block title %}{% endblock %}</title>
-		{% block meta %}
-		{% endblock %}
-		{% block frontendjs %}
-		{% endblock %}
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+		
+		<!-- meta information -->
+		{% block meta %}{% endblock %}
+
+		<!-- Styles and CSS files -->
+		{% block css %}{% endblock %}
+
+		<!-- Front end javascript -->
+		{% block frontendjs %}{% endblock %}
+
 	</head>
 	<body>
-		{% block body %}
-		{% endblock %}
-		{% block backendjs %}
-		{% endblock %}
+		<!-- body section -->
+		{% block body %}{% endblock %}
+		
+		<!-- Back end JavaScript -->
+		{% block backendjs %}{% endblock %}
+		
 	</body>
 </html>
