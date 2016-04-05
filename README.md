@@ -79,7 +79,7 @@ prefix.host|prefix for main host| string [format: ~://host]
 ### General troubles of deployment
 #### ModRewrite
 
-Enable ModRewrite on GNU/Linux:
+Enable ModRewrite on GNU/Linux --alternative to ResourceFallback:
 ```
 linuxuser@machine:~$a2enmode rewrite
 ```
