@@ -1,1 +1,1 @@
-# silex-skeleton
+# Silex PHP Skeleton
