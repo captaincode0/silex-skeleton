@@ -31,9 +31,10 @@
 				"twig.path" => __DIR__."/../views"
 			));
 
+			/*
 			$this->register(new MonologServiceProvider, array(
 				"monolog.logfile" => __DIR__."/../var/log/webapp-text-logger"
-			));
+			));*/
 
 			$this["twig"] = $this->extend("twig", function($twig, $app){
 				$twig->addFunction(new \Twig_SimpleFunction("asset", function($asset) use($app){

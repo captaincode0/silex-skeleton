@@ -1,0 +1,1 @@
+All application scripts need to be here.

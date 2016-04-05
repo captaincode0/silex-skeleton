@@ -1,0 +1,1 @@
+All the error templates need to be located here.
