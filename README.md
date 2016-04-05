@@ -79,9 +79,21 @@ prefix.host|prefix for main host| string [format: ~://host]
 ### General troubles of deployment
 #### ModRewrite
 
+>This problem shows it self when you do your virtual host, and you ant to access directly
+>Your web clients cannot write `http://yourhost.com/web/index.php`, thus they write the following address `http://yourhost.com/`
+
 Enable ModRewrite on GNU/Linux --alternative to ResourceFallback:
 ```
 linuxuser@machine:~$a2enmode rewrite
+```
+
+Enable ModRewrite on .htacess file
+```
+Options -MultiViews
+RewriteEngine On
+RewriteBase /web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
 ```
 
 ## Author
