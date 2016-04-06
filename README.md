@@ -76,7 +76,7 @@ prefix.host|prefix for main host| string [format: ~://host]
 
 ### Virtual host
 
->Virtual hosting is a method to allow multiple hosting domain names in one host, for example in your localhost you could have site1.com and site2.com.
+>Virtual hosting is a method to allow multiple domain names in one machine, for example in your localhost you could have site1.com and site2.com.
 
 - How to SetUp a virtual host
 	- [Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts)
@@ -131,6 +131,8 @@ To enable your virtual host, you need to move the virtual host file to `/etc/apa
 	#save and exit from file with ctrl+o and enter, the next steep is reestart networking configuration
 	linuxuser@machine:~/etc/apache2/sites-available$sudo service networking restart
 ```
+
+>To test your virtual host you need to access using the browser, with the next address `http://mysite.com/`
 
 ### General troubles of deployment
 #### ModRewrite Disabled
@@ -188,6 +190,9 @@ Finally: check it accessing to `http://yourvirtualhost/`, then check the file va
 
 - [The solution is here](https://gist.github.com/jakzal/1791121)
 - [Explanation about ACLs](https://serversforhackers.com/beyond-permissions-linux-acls)
+
+## Deploying result
+>The result when the project is deployed, is the [next](https://drive.google.com/file/d/0B4J-idyc18PdQ3QzLUl2dTBQNk0/view?usp=sharing).
 
 ## Author
 - Diego De Santiago
