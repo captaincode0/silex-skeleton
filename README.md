@@ -202,3 +202,4 @@ Finally: check it accessing to `http://yourvirtualhost/`, then check the file va
 ## Notes
 1. This deploy just is for GNU/Linux in the future i hope add Windows support.
 2. I have not tested this implementation on Windows.
+3. I will do automatic deploying scripts to do more efficient the installation on different platforms.
