@@ -16,6 +16,7 @@
 			//deploy application
 			$this["debug"]=true;
 			$this["production"]=false;
+			$this["local"]=true;
 			$this["https"]=false;
 			$this["asset.url"]=false;
 			$this["prefix-production.host"]="://silexskeleton.herokuapp.com/";
@@ -40,8 +41,11 @@
 				$twig->addFunction(new \Twig_SimpleFunction("asset", function($asset) use($app){
 					if($this["asset.url"])
 						return $app["host"]."web/assets/".$app["request_stack"]->getMasterRequest()->getBasePath()."/".ltrim($asset, "/");
-					else
+					else if(!$this["asset.url"]
+							&& !$this["local"])
 						return "web/assets/".ltrim($asset, "/");
+					else if($this["local"])
+						return "assets/".ltrim($asset, "/");
  				}));
 				return $twig;
 			}); 
