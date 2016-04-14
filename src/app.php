@@ -15,10 +15,10 @@
 
 			//deploy application
 			$this["debug"]=true;
-			$this["production"]=false;
-			$this["local"]=true;
+			$this["production"]=true;
 			$this["https"]=false;
 			$this["asset.url"]=false;
+			$this["override"]=false;
 			$this["prefix-production.host"]="://silexskeleton.herokuapp.com/";
 			$this["prefix.host"]="://www.myhost.com/myapp/";
 			$this["host"] = ($this["production"])?$this["prefix-production.host"]:$this["prefix.host"];
@@ -39,13 +39,16 @@
 
 			$this["twig"] = $this->extend("twig", function($twig, $app){
 				$twig->addFunction(new \Twig_SimpleFunction("asset", function($asset) use($app){
-					if($this["asset.url"])
-						return $app["host"]."web/assets/".$app["request_stack"]->getMasterRequest()->getBasePath()."/".ltrim($asset, "/");
-					else if(!$this["asset.url"]
-							&& !$this["local"])
-						return "web/assets/".ltrim($asset, "/");
-					else if($this["local"])
-						return "assets/".ltrim($asset, "/");
+					if($app["asset.url"] 
+						&& !$app["override"])
+						return $app["host"]."web".$app["request_stack"]->getMasterRequest()->getBasePath()."/".ltrim($asset, "/");
+
+					if($app["asset.url"]
+						&& $app["override"])
+						return $app["host"].$app["request_stack"]->getMasterRequest()->getBasePath()."/".ltrim($asset, "/");
+
+					if(!$app["asset.url"])
+						return ltrim($asset, "/");
  				}));
 				return $twig;
 			}); 

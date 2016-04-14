@@ -69,7 +69,8 @@ Variable | Explanation | Possible values
 debug | application debug variable | boolean
 production|this variable deploys asset into a production environment|boolean
 https|set https into environment variables|boolean
-asset.url|concatenate the url with the assets|boolean
+asset.url|concatenate the domain url with the assets|boolean
+override|it's for override the domain url --web application is allowed|boolean
 prefix-production.host|prefix of production host|string [format: ~://host~]
 prefix.host|prefix for main host| string [format: ~://host]
 
