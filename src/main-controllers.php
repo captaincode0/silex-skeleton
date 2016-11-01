@@ -1,6 +1,5 @@
 <?php
+	use Skeleton\HTTPControllers\MainHTTPController;
 
-	$app->get("/", function() use($app){
-		return $app["twig"]->render("index.html.twig");
-	})
-		->bind("index");
+	//mount one application controller
+	$app->mount("/", new MainHTTPController());
