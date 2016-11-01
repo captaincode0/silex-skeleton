@@ -4,8 +4,6 @@ mkdir var
 mkdir var/log
 mkdir var/cache
 
-rm var/log/webapp-text-logger
-
 setfacl -R -m u:www-data:rwx var/log var/cache
 setfacl -R -d -m u:www-data:rwx var/log var/cache
 
