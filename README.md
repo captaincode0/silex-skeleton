@@ -8,7 +8,7 @@ This is a simple silex skeleton that i use for my personal projects, to deploy i
 
 ## Try It - Installation
 ```bash
-	user@host~$./project-install
+	user@host~$./project-install.sh
 ```
 
 ## Deploying result
